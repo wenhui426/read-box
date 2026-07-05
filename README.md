@@ -1,15 +1,18 @@
 <!-- Language toggle / 语言切换 -->
 <div align="center">
 
-[🇺🇸 English](#english) · [🇨🇳 中文](#中文)
+# Read-Box 📚
+
+[🇺🇸 English](#english) · [🇨🇳 中文](#chinese)
 
 </div>
 
 ---
 
-<a id="english"></a>
+<details open>
+<summary><strong>🇺🇸 English</strong></summary>
 
-# Read-Box 📚
+<br>
 
 > Local multi-agent desktop reading assistant — book parsing, AI digest, Q&A, and quiz, all in one box.
 
@@ -132,9 +135,14 @@ Configure via the Settings page in the app, or via `.env` file.
 
 MIT
 
+</details>
+
 ---
 
-<a id="中文"></a>
+<details>
+<summary><strong>🇨🇳 中文</strong></summary>
+
+<br>
 
 # Read-Box 📚
 
@@ -275,3 +283,5 @@ pnpm tauri build
 ## 许可证
 
 本项目采用 MIT 许可证。
+
+</details>
