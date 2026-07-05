@@ -1,0 +1,23 @@
+# Read-Box 桌面壳 Rust 依赖
+# Tauri 2.x：桌面窗口和原生能力
+# tauri-plugin-shell：管理 Python 后端子进程
+# reqwest：后端健康检查的 HTTP 客户端
+
+[package]
+name = "read-box"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "read_box_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["blocking"] }

@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+dist/
+.pytest_cache/
+
+# Node.js
+node_modules/
+dist/
+
+# Tauri / Rust
+target/
+debug/
+release/
+*.rs.bk
+
+# Database
+*.db
+*.sqlite
+
+# Environment
+.env
+.env.local
+
+# User imported books
+code/backend/books/
+
+# External reference (not part of the project)
+opencode-dev/
+
+# Claude Code local config (contains API keys)
+.claude/settings.json
+.claude/settings.local.json
+
+# Duplicate specs (main specs are in specs/)
+.specify/specs/
+.specify/extensions/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

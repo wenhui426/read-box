@@ -1,0 +1,13 @@
+/// <reference types="vite/client" />
+
+declare module "*.vue" {
+  import type { DefineComponent } from "vue";
+  const component: DefineComponent<object, object, unknown>;
+  export default component;
+}
+
+interface Window {
+  __READBOX_CONFIG__?: {
+    port: number;
+  };
+}

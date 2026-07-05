@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicoverbruggen/claude-code-mirror/refs/heads/main/.schemas/tauri-conf.schema.json",
+  "productName": "Read-Box",           // 应用产品名称
+  "version": "0.1.0",                  // 版本号
+  "identifier": "com.readbox.app",     // 应用唯一标识符
+  "build": {
+    "beforeDevCommand": "pnpm --dir ../frontend dev",   // 开发模式：先启动前端 Vite 开发服务器
+    "devUrl": "http://localhost:5173",                   // 开发模式：Vite 开发服务器地址
+    "beforeBuildCommand": "pnpm --dir ../frontend build", // 构建模式：先构建前端
+    "frontendDist": "../frontend/dist"                    // 构建模式：前端构建产物目录
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Read-Box",           // 窗口标题
+        "width": 1200,                  // 窗口宽度（像素）
+        "height": 800,                  // 窗口高度（像素）
+        "resizable": true,              // 允许用户调整窗口大小
+        "fullscreen": false             // 默认不全屏
+      }
+    ],
+    "security": {
+      "csp": null                       // 关闭内容安全策略（开发阶段）
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",                   // 构建目标：所有支持的平台格式
+    "icon": [
+      "icons/32x32.png",                // Windows 任务栏图标
+      "icons/128x128.png",              // 应用图标
+      "icons/128x128@2x.png",           // 高清应用图标
+      "icons/icon.icns",                // macOS 图标
+      "icons/icon.ico"                  // Windows 图标
+    ]
+  }
+}
