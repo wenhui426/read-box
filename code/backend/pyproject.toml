@@ -1,0 +1,51 @@
+# Read-Box 后端项目配置
+# Python 依赖管理使用 uv（参见 pyproject.toml 中的 [project] 定义）
+# 代码规范使用 Ruff（检查）+ Black（格式化）
+
+[project]
+name = "read-box-backend"                # 项目名称
+version = "0.1.0"                        # 当前版本
+description = "Read-Box 后端服务 - 本地多 Agent 桌面读书辅助系统"
+requires-python = ">=3.14"               # 最低 Python 版本要求
+dependencies = [
+    "fastapi>=0.115.0",                  # Web API 框架
+    "uvicorn[standard]>=0.34.0",         # ASGI 服务器
+    "aiosqlite>=0.20.0",                 # 异步 SQLite 数据库驱动
+    "python-dotenv>=1.1.0",             # 环境变量加载（.env 文件）
+    "PyMuPDF>=1.25.0",                  # PDF 解析引擎
+    "ebooklib>=0.18.0",                 # EPUB 解析引擎
+    "chardet>=5.2.0",                   # TXT 编码自动检测
+    "beautifulsoup4>=4.12.0",           # HTML 解析（EPUB 正文提取）
+    "python-multipart>=0.0.20",          # 文件上传支持（FastAPI）
+    "httpx>=0.28.0",                     # HTTP 客户端（调用 LLM API）
+]
+
+# 开发环境依赖（测试、代码检查等）
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+# Ruff 代码检查工具配置
+# 遵循宪法"代码质量与一致性"原则
+[tool.ruff]
+target-version = "py314"     # Python 3.14 语法
+line-length = 100            # 行宽限制
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]  # 启用的规则集
+
+# Black 代码格式化配置
+[tool.black]
+line-length = 100
+target-version = ["py314"]
+
+# setuptools 包发现配置
+# 排除 books/ 等非 Python 模块目录
+[tool.setuptools.packages.find]
+include = ["app*"]
+exclude = ["books*", "tests*"]
+
+# 构建系统配置
+# 使用标准 setuptools，确保在不同 Python 版本下均可构建
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,16 @@
+{
+  "name": "read-box",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Read-Box 桌面应用主入口 — 通过 pnpm dev/build 管理 Tauri 构建",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  },
+  "readbox": {
+    "note": "此 package.json 位于 code/ 根目录，用于启动 Tauri 构建。前端源码在 frontend/ 下。"
+  }
+}
